@@ -1,0 +1,29 @@
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-right: 10vw;
+}
+.btnContainer button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  margin: 5px;
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px 15px;
+  cursor: pointer;
+}
+.btnContainer button:hover {
+  background-color: #ddd;
+  color: black;
+}
+.btnContainer button:disabled {
+  background-color: #ddd;
+  color: #fff;
+  cursor: no-drop;
+}
