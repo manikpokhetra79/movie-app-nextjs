@@ -8,11 +8,11 @@ const movies = ({ movies }) => {
       {movies?.errors ? (
         <div className={movieStyles.heading}>
           <PaginateData /> <h1>No more results</h1>
-          <Link href="/">Go back to Home</Link>
+          <Link href="/movies">Go back to start</Link>
         </div>
       ) : (
         <div>
-          <h1 className={movieStyles.heading}>Discover Movies</h1>
+          <h1 className={movieStyles.heading}>Popular Movies</h1>
           <PaginateData />
           <MovieList movies={movies} />
         </div>
@@ -24,7 +24,7 @@ const movies = ({ movies }) => {
 export const getServerSideProps = async ({ query }) => {
   const page = query.page || 1;
   const res = await fetch(
-    `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=${page}&api_key=${process.env.API_KEY}`
+    `${process.env.MOVIE_API}/discover/movie?sort_by=popularity.desc&page=${page}&api_key=${process.env.API_KEY}`
   );
   const movies = await res.json();
   return {

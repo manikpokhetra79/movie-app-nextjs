@@ -12,16 +12,20 @@ const PaginateData = () => {
       setIfLeft(true);
     }
   }, []);
+  function updateRoute(path, page) {
+    router.push({
+      pathname: path,
+      query: { page },
+    });
+  }
   function handleNextPage() {
     if (!ifLeft) {
       setIfLeft(true);
     }
     const currentPath = router.pathname;
     let page = router?.query?.page ? Number(router.query.page) + 1 : 2;
-    router.push({
-      pathname: currentPath,
-      query: { page },
-    });
+    // update route params
+    updateRoute(currentPath, page);
   }
   function handlePreviousPage() {
     const currentPath = router.pathname;
@@ -37,10 +41,8 @@ const PaginateData = () => {
     if (page === 0) {
       return;
     }
-    router.push({
-      pathname: currentPath,
-      query: { page },
-    });
+    // update route params
+    updateRoute(currentPath, page);
   }
   return (
     <div className={styles.btnContainer}>
