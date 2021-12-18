@@ -34,7 +34,7 @@ const PaginateData = () => {
       router?.query?.page && router?.query?.page > 1
         ? Number(router.query.page) - 1
         : 0;
-    console.log(page);
+    // console.log(page);
     if (page === 1) {
       setIfLeft(false);
     }
