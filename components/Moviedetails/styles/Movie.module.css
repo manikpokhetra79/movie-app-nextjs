@@ -1,3 +1,7 @@
+/* utility classes */
+.tCenter{
+  text-align: center;
+}
 /* movie header */
 .container {
   border-bottom: 1px solid black;
@@ -29,19 +33,31 @@
 /* moviecast */
 .cardsWrapper {
   display: flex;
+  overflow-y: scroll;
+  width: 90%;
+  margin: auto;
 }
 /* castcard css */
 
 .cWrapper {
-  height: 250px;
-  width: 150px;
   border: 5px solid rgba(235, 222, 222, 0.153);
-  margin: 5px;
+  margin: 10px;
+  height: 260px;
+  width: 160px;
+  min-width: 160px;
+  text-align: center;
 }
 .mainText {
-  font-size: 14px;
+  font-size: 16px;
 }
 .subText {
-  font-size: 12px;
-  font-style: italic;
+  font-size: 14px;
+  font-family: monospace;
+}
+/* recommended movie styles */
+.rCardsWrapper {
+  display: flex;
+  overflow-y: scroll;
+  width: 90%;
+  margin: auto;
 }

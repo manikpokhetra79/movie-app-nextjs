@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/Paginate.module.css";
+// import styles from "../styles/Paginate.module.css";
 import { useRouter } from "next/router";
 const Search = (props) => {
   const [text, setText] = useState("");
@@ -16,7 +16,7 @@ const Search = (props) => {
   };
   return (
     <>
-      <div>
+      <div className="searchBar">
         <label htmlFor="name">Search </label>&nbsp;
         <input
           id="search"

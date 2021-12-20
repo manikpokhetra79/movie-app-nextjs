@@ -1,7 +1,15 @@
-import React from "react";
-
+import styles from "./styles/Movie.module.css";
+import RecomCard from "./RecomCard";
 const MovieRecom = ({ recom }) => {
-  return <div></div>;
+  console.log(recom.results);
+  let { results } = recom;
+  return (
+    <div className={styles.rCardsWrapper}>
+      {results.map((people) => (
+        <RecomCard key={people.id} movie={people} />
+      ))}
+    </div>
+  );
 };
 
 export default MovieRecom;

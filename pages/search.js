@@ -8,11 +8,15 @@ const search = ({ data }) => {
   return (
     <div>
       {searchType === "person" ? (
-        <PeopleList people={data} />
-        // <h2>People</h2>
+        <>
+          <h2>People Results</h2>
+          <PeopleList people={data} />
+        </>
       ) : (
-        <MovieList movies={data} />
-        // <h2>Movie</h2>
+        <>
+          <h2>Movie Results</h2>
+          <MovieList movies={data} />
+        </>
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import styles from "./styles/Movie.module.css";
 const CastCard = ({ cast }) => {
@@ -8,8 +7,8 @@ const CastCard = ({ cast }) => {
       <div>
         <Image
           src={`https://www.themoviedb.org/t/p/w276_and_h350_face${cast.profile_path}`}
-          width={140}
-          height={175}
+          width={160}
+          height={180}
           alt={`${cast.title}`}
         />
       </div>

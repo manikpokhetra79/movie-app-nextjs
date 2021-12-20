@@ -34,7 +34,7 @@ const MovieHeader = ({ details }) => {
             </p>
             <p>Rating : {details.vote_average*10}%</p>
             <div>
-              <h2>Overview</h2>
+              <h3>Overview</h3>
               <p>{details.overview}</p>
             </div>
           </div>

@@ -1,9 +1,7 @@
-import React from "react";
 import CastCard from "./CastCard";
 import styles from "./styles/Movie.module.css";
 const MovieCast = ({ credits }) => {
-  let cast = credits.cast.slice(0, 10);
-  // console.log(cast);
+  let cast = credits.cast.slice(0, 12);
   return (
     <div className={styles.cardsWrapper}>
       {cast.map((people) => (
@@ -12,5 +10,5 @@ const MovieCast = ({ credits }) => {
     </div>
   );
 };
-
+0;
 export default MovieCast;

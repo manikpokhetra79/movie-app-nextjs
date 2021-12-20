@@ -11,12 +11,8 @@ const Nav = () => {
             <Link href="/movies">Movies</Link>{" "}
             <Link href="/people">People</Link>
           </li>
-          {/* <li>
-            <Link href="/movies">Movies</Link>
-          </li> */}
-
           <li>
-            <Search />
+            {/* <Search /> */}
           </li>
         </ul>
       </nav>
