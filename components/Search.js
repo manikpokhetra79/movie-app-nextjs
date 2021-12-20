@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import styles from "../styles/Paginate.module.css";
+import styles from "../styles/Search.module.scss";
 import { useRouter } from "next/router";
 const Search = (props) => {
   const [text, setText] = useState("");
@@ -16,25 +16,32 @@ const Search = (props) => {
   };
   return (
     <>
-      <div className="searchBar">
-        <label htmlFor="name">Search </label>&nbsp;
-        <input
-          id="search"
-          type="text"
-          placeholder="search "
-          onChange={(e) => {
-            setText(e.target.value);
-          }}
-        />
-        <select
-          onChange={(e) => {
-            setSearchType(e.target.value);
-          }}
-        >
-          <option onChange={(e) => setSearchType(e.target.value)}>None</option>
-          <option value="movie">Movies</option>{" "}
-          <option value="person">Celebrities</option>
-        </select>
+      <div className={styles.searchBar}>
+        <div>
+          {" "}
+          {/* <label htmlFor="name">Search </label>&nbsp; */}
+          <input
+            id="search"
+            type="text"
+            placeholder="Search movies or people"
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <select
+            onChange={(e) => {
+              setSearchType(e.target.value);
+            }}
+          >
+            <option onChange={(e) => setSearchType(e.target.value)}>
+              Select type
+            </option>
+            <option value="movie">Movies</option>{" "}
+            <option value="person">Celebrities</option>
+          </select>
+        </div>{" "}
         <button onClick={searchQuery}>Search</button>
       </div>
     </>

@@ -13,7 +13,7 @@ const MovieDetails = (props) => {
           <MovieHeader details={details} />
         </section>
         <section id="movie-cast">
-          <h2>Top Cast</h2>
+          <h2>Top Movie Cast</h2>
           <MovieCast credits={credits} />
         </section>
         <section id="movie-recom">

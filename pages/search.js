@@ -2,6 +2,7 @@ import PaginateData from "../components/PaginateData";
 import MovieList from "../components/MovieList";
 import router from "next/router";
 import PeopleList from "../components/PeopleList";
+
 const search = ({ data }) => {
   let searchType = router?.router?.query?.type;
   console.log(searchType);

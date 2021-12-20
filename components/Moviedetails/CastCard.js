@@ -4,7 +4,7 @@ const CastCard = ({ cast }) => {
   console.log(cast);
   return (
     <div className={styles.cWrapper}>
-      <div>
+      <div className={styles.imgWrapper}> 
         <Image
           src={`https://www.themoviedb.org/t/p/w276_and_h350_face${cast.profile_path}`}
           width={160}

@@ -1,11 +1,11 @@
 /* utility classes */
-.tCenter{
+.tCenter {
   text-align: center;
 }
 /* movie header */
 .container {
-  border-bottom: 1px solid black;
-  background-position: right -200px top;
+  border-bottom: 10px solid #30475c;
+  background-position: right -100px top;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
@@ -38,20 +38,21 @@
   margin: auto;
 }
 /* castcard css */
-
 .cWrapper {
-  border: 5px solid rgba(235, 222, 222, 0.153);
+  border: 2px solid rgba(41, 36, 36, 0.801);
   margin: 10px;
   height: 260px;
-  width: 160px;
+  /* width: 160px; */
   min-width: 160px;
   text-align: center;
+  border-radius: 5px;
 }
+
 .mainText {
-  font-size: 16px;
+  font-size: 14px;
 }
 .subText {
-  font-size: 14px;
+  font-size: 12px;
   font-family: monospace;
 }
 /* recommended movie styles */

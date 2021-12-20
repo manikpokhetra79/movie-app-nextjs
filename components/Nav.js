@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Search from "./Search";
-import navStyles from "../styles/Nav.module.css";
+import navStyles from "../styles/Nav.module.scss";
 const Nav = () => {
   return (
     <>
@@ -8,11 +8,12 @@ const Nav = () => {
         <ul>
           <li>
             <Link href="/">Home</Link>
-            <Link href="/movies">Movies</Link>{" "}
-            <Link href="/people">People</Link>
           </li>
           <li>
-            {/* <Search /> */}
+            <Link href="/movies">Browse Movies</Link>
+          </li>
+          <li>
+            <Link href="/people">Browse People</Link>
           </li>
         </ul>
       </nav>

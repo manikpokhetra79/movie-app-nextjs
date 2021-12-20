@@ -1,0 +1,28 @@
+.nav {
+  height: 70px;
+  padding: 10px;
+  background: #30475c;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1.1px;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+
+    li {
+      a {
+        margin: 5px 15px;
+        cursor: pointer;
+        padding: 5px;
+        border-bottom: 2px solid transparent;
+        transition: 0.3s;
+        &:hover {
+          border-bottom: 2px solid #5a7d9e;
+        }
+      }
+    }
+  }
+}
