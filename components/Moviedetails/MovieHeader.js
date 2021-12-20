@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./styles/Movie.module.css";
+import styles from "./styles/Movie.module.scss";
 const MovieHeader = ({ details }) => {
-  console.log(details);
-  // );
+  let percent = details.vote_average * 10;
+  let color = percent > 40 ? (percent > 60 ? "green" : "orange") : "red";
+  // console.log(details);
   return (
     <>
       <div
@@ -14,9 +15,9 @@ const MovieHeader = ({ details }) => {
       >
         <div className={styles.innerContainer}>
           {" "}
-          {/* left */}
           <div className={styles.leftSide}>
             <Image
+              className={styles.profileimg}
               src={`https://www.themoviedb.org/t/p/w1280${details.poster_path}`}
               width={300}
               height={400}
@@ -32,7 +33,20 @@ const MovieHeader = ({ details }) => {
             <p>
               <i>{details.tagline}</i>
             </p>
-            <p>Rating : {details.vote_average*10}%</p>
+            <p>
+              Rating :&nbsp;
+              <span
+                style={{
+                  backgroundColor: `${color}`,
+                  padding: "6px",
+                  borderRadius: "50%",
+                }}
+                className={styles.rating}
+              >
+                {percent}&nbsp;
+              </span>
+              %
+            </p>
             <div>
               <h3>Overview</h3>
               <p>{details.overview}</p>

@@ -9,6 +9,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
+  .profileimg {
+    border-radius: 10px;
+    transition: 0.2s;
+    &:hover {
+      filter: blur(5px);
+    }
+  }
 }
 .innerContainer {
   display: flex;
@@ -61,4 +68,12 @@
   overflow-y: scroll;
   width: 90%;
   margin: auto;
+}
+
+// media queries
+@media screen and (max-width: 575px) {
+  .innerContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }

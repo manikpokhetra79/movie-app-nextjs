@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  justify-content: space-evenly;
+  // left container
+  .leftContainer {
+    margin-right: 20px;
+    min-width: 25%;
+    .profileimg {
+      border-radius: 10px;
+      transition: 0.2s;
+      &:hover {
+        filter: blur(5px);
+      }
+    }
+    .socialsWrapper {
+      padding: 1.2rem;
+    }
+  }
+  // right container
+  .rightContainer {
+    width: 75%;
+    .moviesList {
+      display: flex;
+      overflow-y: scroll;
+      width: 90%;
+      margin: auto;
+      .cWrapper {
+        border: 2px solid rgba(41, 36, 36, 0.801);
+        margin: 10px;
+        height: 260px;
+        min-width: 160px;
+        text-align: center;
+        border-radius: 5px;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+// media queries
+@media screen and (max-width: 575px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    .leftContainer {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .rightContainer {
+      width: 100%;
+      .moviesList {
+        width: 100%;
+        .cWrapper {
+          height: 220px;
+          min-width: 120px;
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

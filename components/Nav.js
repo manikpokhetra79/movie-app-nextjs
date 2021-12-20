@@ -10,10 +10,13 @@ const Nav = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/movies">Browse Movies</Link>
+            <Link href="/movies"> Movies</Link>
           </li>
           <li>
-            <Link href="/people">Browse People</Link>
+            <Link href="/people"> People</Link>
+          </li>
+          <li>
+            <Link href="https://developers.themoviedb.org/3">Api </Link>
           </li>
         </ul>
       </nav>

@@ -44,3 +44,29 @@
     }
   }
 }
+
+@media screen and (max-width: 792px) {
+  .searchBar {
+    input {
+      &[type="text"] {
+        width: 300px;
+      }
+    }
+    button {
+      width: 100px;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .searchBar {
+    input {
+      &[type="text"] {
+        width: 220px;
+      }
+    }
+    button {
+      width: 60px;
+      font-size: 12px;
+    }
+  }
+}

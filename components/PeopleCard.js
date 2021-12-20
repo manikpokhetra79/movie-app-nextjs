@@ -19,10 +19,8 @@ const PeopleCard = ({ person }) => {
               <h4>{person?.name}</h4>
             </div>
             <div>
-              {/* <b>Rating</b> : {person?.vote_average} */}
               {person?.known_for?.map((movie, index) => (
                 <span className={listStyles.pcardcaption} key={movie.id}>
-                  {/* {movie?.original_title} */}
                   {(index ? ", " : "") +
                     (movie.original_title === undefined
                       ? movie.original_name

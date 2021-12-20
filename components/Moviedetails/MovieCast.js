@@ -1,5 +1,5 @@
 import CastCard from "./CastCard";
-import styles from "./styles/Movie.module.css";
+import styles from "./styles/Movie.module.scss";
 const MovieCast = ({ credits }) => {
   let cast = credits.cast.slice(0, 12);
   return (

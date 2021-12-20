@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./styles/Movie.module.css";
+import styles from "./styles/Movie.module.scss";
 const RecomCard = ({ movie }) => {
   // console.log(movie);
   let path =

@@ -1,4 +1,4 @@
-import styles from "./styles/Movie.module.css";
+import styles from "./styles/Movie.module.scss";
 import RecomCard from "./RecomCard";
 const MovieRecom = ({ recom }) => {
   console.log(recom.results);

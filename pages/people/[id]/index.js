@@ -1,7 +1,7 @@
 import axios from "axios";
 import PeopleDetails from "../../../components/PeopleDetails";
 const index = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <PeopleDetails {...props} />
@@ -15,11 +15,8 @@ export const getServerSideProps = async (context) => {
     `${process.env.MOVIE_API}/person/${id}?api_key=${process.env.API_KEY}&language=en-US`
   );
   const { data: personMovies } = await axios.get(
-    `${process.env.MOVIE_API}/person/${id}?api_key=${process.env.API_KEY}&language=en-US`
+    `${process.env.MOVIE_API}/person/${id}/tv_credits?api_key=${process.env.API_KEY}&language=en-US`
   );
-  // const { data: personShows } = await axios.get(
-  //   `${process.env.MOVIE_API}/person/${id}/tv_credits?api_key=${process.env.API_KEY}&language=en-US`
-  // );
   const { data: personSocials } = await axios.get(
     `${process.env.MOVIE_API}/person/${id}/external_ids?api_key=${process.env.API_KEY}&language=en-US`
   );

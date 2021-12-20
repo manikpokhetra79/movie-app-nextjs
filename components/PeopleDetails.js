@@ -1,7 +1,11 @@
 import React from "react";
-
-const PeopleDetails = () => {
-  return <div></div>;
+import PeoplePageCard from "./PeopleDetails/PeoplePageCard";
+const PeopleDetails = (props) => {
+  return (
+    <div>
+      <PeoplePageCard {...props} />
+    </div>
+  );
 };
 
 export default PeopleDetails;
