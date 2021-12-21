@@ -5,7 +5,6 @@ import Image from "next/image";
 import styles from "./styles/People.module.scss";
 import Link from "next/link";
 const PeoplePageCard = ({ details, socials, movies }) => {
-  console.log(movies);
   let gender = details.gender === 1 ? "Female" : "Male";
   let castArray = movies?.cast?.slice(0, 10);
   let peopleImageUrl = details?.profile_path
