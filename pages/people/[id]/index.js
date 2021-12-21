@@ -1,7 +1,7 @@
 import axios from "axios";
 import PeopleDetails from "../../../components/PeopleDetails";
 const index = (props) => {
-  // console.log(props);
+  
   return (
     <div>
       <PeopleDetails {...props} />

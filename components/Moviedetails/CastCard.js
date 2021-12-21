@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles/Movie.module.scss";
 const CastCard = ({ cast }) => {
-  console.log(cast);
+  let imageUrl = cast?.profile_path
+    ? `https://www.themoviedb.org/t/p/w276_and_h350_face${cast.profile_path}`
+    : process.env.EMPTY_PERSON_IMAGE;
   return (
     <Link href={`/people/${cast?.id}`}>
       <a>
         <div className={styles.cWrapper}>
           <div className={styles.imgWrapper}>
             <Image
-              src={`https://www.themoviedb.org/t/p/w276_and_h350_face${cast.profile_path}`}
+              src={imageUrl}
               width={160}
               height={180}
               alt={`${cast.title}`}

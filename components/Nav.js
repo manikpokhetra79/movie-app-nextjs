@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Search from "./Search";
 import navStyles from "../styles/Nav.module.scss";
 const Nav = () => {
   return (
@@ -7,7 +6,9 @@ const Nav = () => {
       <nav className={navStyles.nav}>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <a className={navStyles.title}>MovieFLix</a>
+            </Link>
           </li>
           <li>
             <Link href="/movies"> Movies</Link>

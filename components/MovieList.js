@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
 import listStyles from "../styles/Movie.module.css";
 const MovieList = ({ movies }) => {
-  console.log(movies);
+  
   return (
     <div className={listStyles.list}>
       {movies.results?.map((movie) => (

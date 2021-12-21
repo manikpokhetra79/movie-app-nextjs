@@ -2,23 +2,25 @@ import React from "react";
 import twitterLogo from "../../assets/icons/twitter.png";
 import instagramLogo from "../../assets/icons/instagram.png";
 import Image from "next/image";
-
 import styles from "./styles/People.module.scss";
 import Link from "next/link";
 const PeoplePageCard = ({ details, socials, movies }) => {
-  console.log(movies);
+  
   let gender = details.gender === 1 ? "Female" : "Male";
   let castArray = movies?.cast?.slice(0, 10);
-  console.log(castArray);
+  let peopleImageUrl = details?.profile_path
+    ? `https://www.themoviedb.org/t/p/w1280${details?.profile_path}`
+    : process.env.EMPTY_PERSON_IMAGE;
+
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
         <div>
           <Image
-            src={`https://www.themoviedb.org/t/p/w1280${details.profile_path}`}
+            src={peopleImageUrl}
             width={300}
             height={400}
-            alt={`${details.name}`}
+            alt={`${details?.name}`}
             className={styles.profileimg}
           />
           <div className={styles.socialsWrapper}>
@@ -61,21 +63,26 @@ const PeoplePageCard = ({ details, socials, movies }) => {
             <h2>Personal Info</h2>
           </div>
           <p>
-            <b>Known for :</b> {details.known_for_department}
+            <b>Known for :</b>{" "}
+            {details.known_for_department === null
+              ? "NA"
+              : details.known_for_department}
           </p>
           <p>
             <b>Gender :</b> {gender}
           </p>
           <p>
-            <b>Birthdate :</b> {details.birthday}
+            <b>Birthdate :</b>{" "}
+            {details.birthday === null ? "NA" : details.birthday}
           </p>
           <p>
-            <b>Place of Birth :</b> {details.place_of_birth}
+            <b>Place of Birth :</b>{" "}
+            {details.place_of_birth === null ? "NA" : details.place_of_birth}
           </p>
           <div>
             <h4>Also known as :</h4>{" "}
             {details?.also_known_as.length === 0 ? (
-              <p>-</p>
+              <p>NA</p>
             ) : (
               details?.also_known_as?.map((data, index) => (
                 <p key={index}>{data}</p>
@@ -88,29 +95,43 @@ const PeoplePageCard = ({ details, socials, movies }) => {
         <div>
           <h1>{details.name}</h1>
           <h2>Biography</h2>
-          <p>{details.biography}</p>
+          <p>
+            {details.biography === "" ? (
+              <span>Information not available</span>
+            ) : (
+              details.biography
+            )}
+          </p>
         </div>
         {/* movies list */}
         <h2>Known For</h2>
         <div className={styles.moviesList}>
-          {castArray.map((movie) => (
-            <Link href={`/movies/${movie?.id}`} key={movie.id}>
-              <a>
-                <div className={styles.cWrapper}>
-                  <div>
-                    <Image
-                      src={`https://www.themoviedb.org/t/p/w276_and_h350_face${movie?.backdrop_path}`}
-                      width={200}
-                      height={250}
-                      alt={`${movie.title}`}
-                    />
-                  </div>
+          {castArray.length > 0 ? (
+            castArray?.map((movie) => (
+              <Link href={`/movies/${movie?.id}`} key={movie.id}>
+                <a>
+                  <div className={styles.cWrapper}>
+                    <div>
+                      <Image
+                        src={
+                          movie?.backdrop_path
+                            ? `https://www.themoviedb.org/t/p/w276_and_h350_face${movie?.backdrop_path}`
+                            : process.env.EMPTY_MOVIE_IMAGE
+                        }
+                        width={160}
+                        height={200}
+                        alt={`${movie.title}`}
+                      />
+                    </div>
 
-                  <p className={styles.mainText}>{movie.name}</p>
-                </div>
-              </a>
-            </Link>
-          ))}
+                    <p className={styles.mainText}>{movie.name}</p>
+                  </div>
+                </a>
+              </Link>
+            ))
+          ) : (
+            <h4>No Information available</h4>
+          )}
         </div>
       </div>
     </div>
