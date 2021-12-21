@@ -16,7 +16,7 @@ const Nav = () => {
           <li>
             <Link href="/people"> People</Link>
           </li>
-          <li>
+          <li className={navStyles.api}>
             <Link href="https://developers.themoviedb.org/3">Api </Link>
           </li>
         </ul>

@@ -4,9 +4,9 @@ const MovieCast = ({ credits }) => {
   let cast = credits.cast.slice(0, 12);
   return (
     <div className={styles.cardsWrapper}>
-      {cast.map((people) => (
+      {cast?.length > 0 ? cast.map((people) => (
         <CastCard key={people.id} cast={people} />
-      ))}
+      )) : <h4>No Cast info...</h4>}
     </div>
   );
 };

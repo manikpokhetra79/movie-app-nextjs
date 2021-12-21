@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./styles/People.module.scss";
 import Link from "next/link";
 const PeoplePageCard = ({ details, socials, movies }) => {
-  
+  console.log(movies);
   let gender = details.gender === 1 ? "Female" : "Male";
   let castArray = movies?.cast?.slice(0, 10);
   let peopleImageUrl = details?.profile_path
@@ -114,8 +114,8 @@ const PeoplePageCard = ({ details, socials, movies }) => {
                     <div>
                       <Image
                         src={
-                          movie?.backdrop_path
-                            ? `https://www.themoviedb.org/t/p/w276_and_h350_face${movie?.backdrop_path}`
+                          movie?.poster_path
+                            ? `https://www.themoviedb.org/t/p/w276_and_h350_face${movie?.poster_path}`
                             : process.env.EMPTY_MOVIE_IMAGE
                         }
                         width={160}
@@ -124,7 +124,7 @@ const PeoplePageCard = ({ details, socials, movies }) => {
                       />
                     </div>
 
-                    <p className={styles.mainText}>{movie.name}</p>
+                    <p className={styles.mainText}>{movie?.title}</p>
                   </div>
                 </a>
               </Link>
